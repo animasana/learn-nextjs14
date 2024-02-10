@@ -1,11 +1,12 @@
 .credit {
   display: grid;
-  grid-template-rows: 1fr auto;
-  gap: 20px;  
-  place-items: center;
+  /* grid-template-rows: 1fr; */
+  gap: 5px;  
+  place-items: center;    
+  /* border: 1px solid #ccc; */
 }
 
-.credit img {
+.credit img {  
   max-width: 100%;
   min-height: 100%;
   border-radius: 10px;
@@ -23,4 +24,19 @@
 
 .credit a {
   text-align: center;
+}
+
+.credit_fallback {
+  display: grid;
+  grid-template-rows: 1fr auto;
+  gap: 5px;  
+  place-items: center;    
+  /* border: 1px solid #ccc; */
+}
+
+.credit_fallback img {
+  max-width: 70%;
+  min-height: 70%;
+  border-radius: 10px;
+  transition: opacity 0.3s ease-in-out;
 }
