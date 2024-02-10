@@ -13,19 +13,28 @@ export default async function MovieCredits({ id }: { id: string }) {
 
   return (
     <>
-      <div className={styles.anchor_back}>
+      <span className={styles.anchor_back}>
         <Link prefetch href={`/movies/${id}`}>&larr; Back to the movie info</Link>
-      </div>
-      <div className={styles.container}>      
-        {credits.map(credit => 
-          <Credit 
-            key={credit.id}
-            name={credit.name} 
-            character={credit.character}          
-            profile_path={credit.profile_path ?? DUMMY_PERSON} 
-          />
-        )}
-      </div>
+      </span>
+      {
+        credits.length !== 0 ?
+        (
+          <div className={styles.container}>      
+          {           
+            credits.map(credit => 
+              <Credit 
+                key={credit.id}
+                name={credit.name} 
+                character={credit.character}          
+                profile_path={credit.profile_path ?? DUMMY_PERSON} 
+              />
+            )
+          }
+          </div>
+        ) : (
+          <h1 className={styles.not_found}>Credit Not Found!!!</h1>
+        )
+      }
     </>
   );
 }
